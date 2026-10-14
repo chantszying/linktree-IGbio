@@ -31,6 +31,10 @@
             box-sizing: border-box;
         }
 
+        /* ─── 語言切換顯示設定 ─── */
+        body.lang-en .lang-zh { display: none !important; }
+        body.lang-zh .en { display: none !important; }
+
         .container {
             max-width: 500px;
             width: 100%;
@@ -42,6 +46,22 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        .bio-lang-toggle {
+            align-self: flex-end;
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 12px;
+            cursor: pointer;
+            margin-bottom: 5px;
+            margin-left: auto;
+            display: block;
+            transition: 0.3s;
+        }
+        .bio-lang-toggle:hover { background: var(--accent); color: #fff; }
 
         .avatar {
             width: 100px;
@@ -177,9 +197,14 @@
         }
     </style>
 </head>
-<body>
+<body class="lang-en">
 
     <div class="container">
+        <!-- 語言切換按鈕 -->
+        <button class="bio-lang-toggle" onclick="toggleLanguage()">
+            <i class="fa-solid fa-globe"></i> <span class="en">中文</span><span class="lang-zh">EN</span>
+        </button>
+
         <!-- 頭像與名稱 -->
         <img src="https://hkeccolab.weebly.com/uploads/1/5/3/3/153337742/published/whatsapp-image-2025-12-02-at-5-11-47-pm.jpeg?1772554079" alt="Profile" class="avatar">
         <h1>Chan Tsz Ying</h1>
@@ -194,21 +219,33 @@
 
         <!-- 簡介卡片 -->
         <div class="intro-box">
-            <p>Welcome to my personal corner! I share my academic research, film photography, and encounters with urban wildlife. My passion for nature led me to pursue Environmental Management at HKBU & HKU, and currently my MPhil studies.</p>
+            <p>
+                <span class="en">Welcome to my personal corner! I share my academic research, film photography, and encounters with urban wildlife. My passion for nature led me to pursue Environmental Management at HKBU & HKU, and currently my MPhil studies.</span>
+                <span class="lang-zh">歡迎來到我的個人小角落！我會在這裡分享我的學術研究、底片攝影，以及與城市野生動物的相遇。我對大自然的熱情啟發我先後在 HKBU 與 HKU 修讀環境管理，現正展開 MPhil 研究旅程。</span>
+            </p>
             
-            <h3>Let's Work Together & Connect</h3>
-            <p style="text-align: center; font-size: 13px;">If you are interested in nature, ecology, film photography, or creative projects, feel free to reach out! I'm looking forward to these forms of exchange:</p>
+            <h3>
+                <span class="en">Let's Work Together & Connect</span>
+                <span class="lang-zh">一起交流與合作</span>
+            </h3>
+            <p style="text-align: center; font-size: 13px;">
+                <span class="en">If you are interested in nature, ecology, film photography, or creative projects, feel free to reach out! I'm looking forward to these forms of exchange:</span>
+                <span class="lang-zh">如果你對生態、底片攝影或各種企劃感興趣，歡迎找我聊聊天！目前特別期待以下形式的交流：</span>
+            </p>
         </div>
 
-        <!-- 🚨 注意：請將 href 屬性中的網址替換成您舊網站的真實網址 🚨 -->
+        <!-- 🚨 注意：記得將下方網址中的 chantszying.github.io/您的專案名稱/ 替換成您實際的主網站網址 🚨 -->
         
         <!-- 連結卡片 1: Travel Blog -->
         <a href="https://chantszying.github.io/urban-wilder/#travel" class="link-item">
             <div class="link-title">
                 <span>🌿 Eco & Wildlife Chats</span>
             </div>
-            <p class="link-desc">Exchange thoughts on urban wildlife, bee/wasp observations, and conservation, or share stories of encounters in the field.</p>
-            <div class="btn-small">Read Travel Blog <i class="fa-solid fa-arrow-right"></i></div>
+            <p class="link-desc">
+                <span class="en">Exchange thoughts on urban wildlife, bee/wasp observations, and conservation, or share stories of encounters in the field.</span>
+                <span class="lang-zh">交流關於城市野生動物、蜜蜂/黃蜂觀察、生態保育的所見所聞。</span>
+            </p>
+            <div class="btn-small"><span class="en">Read Travel Blog</span><span class="lang-zh">閱讀旅遊 Blog</span> <i class="fa-solid fa-arrow-right"></i></div>
         </a>
 
         <!-- 連結卡片 2: My Gallery -->
@@ -216,8 +253,11 @@
             <div class="link-title">
                 <span>🎞️ Film Photography Walks</span>
             </div>
-            <p class="link-desc">Share film camera tips and lab experiences, or go on a photowalk around the city together to capture everyday moments.</p>
-            <div class="btn-small">View My Gallery <i class="fa-solid fa-arrow-right"></i></div>
+            <p class="link-desc">
+                <span class="en">Share film camera tips and lab experiences, or go on a photowalk around the city together to capture everyday moments.</span>
+                <span class="lang-zh">互相交換底片相機的使用心得、沖掃經驗，或者一起去城市散步、捕捉日常風景。</span>
+            </p>
+            <div class="btn-small"><span class="en">View My Gallery</span><span class="lang-zh">我的作品 - My Gallery</span> <i class="fa-solid fa-arrow-right"></i></div>
         </a>
 
         <!-- 連結卡片 3: Project -->
@@ -225,13 +265,33 @@
             <div class="link-title">
                 <span>✨ Creative Projects</span>
             </div>
-            <p class="link-desc">From Cyanotype creations and handmade crafts to any fun or even slightly wild ideas, let's brainstorm together!</p>
-            <div class="btn-small">View Projects <i class="fa-solid fa-arrow-right"></i></div>
+            <p class="link-desc">
+                <span class="en">From Cyanotype creations and handmade crafts to any fun or even slightly wild ideas, let's brainstorm together!</span>
+                <span class="lang-zh">像是藍曬（Cyanotype）創作、手作小物，或是任何好玩、甚至有其他 idea，都歡迎一起創作！</span>
+            </p>
+            <div class="btn-small"><span class="en">View Projects</span><span class="lang-zh">小小企劃 - Project</span> <i class="fa-solid fa-arrow-right"></i></div>
         </a>
 
         <!-- 進入主網站連結 -->
-        <a href="https://chantszying.github.io/urban-wilder/" class="enter-website">Enter Full Website</a>
+        <a href="https://chantszying.github.io/urban-wilder/" class="enter-website">
+            <span class="en">Enter Full Website</span><span class="lang-zh">進入完整網站</span>
+        </a>
     </div>
 
+    <script>
+        let currentLang = 'en';
+        function toggleLanguage() {
+            const body = document.body;
+            if (currentLang === 'en') {
+                body.classList.remove('lang-en');
+                body.classList.add('lang-zh');
+                currentLang = 'zh';
+            } else {
+                body.classList.remove('lang-zh');
+                body.classList.add('lang-en');
+                currentLang = 'en';
+            }
+        }
+    </script>
 </body>
 </html>
