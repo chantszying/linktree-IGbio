@@ -40,6 +40,9 @@
             width: 100%;
             text-align: center;
             animation: fadeIn 0.8s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         @keyframes fadeIn {
@@ -58,7 +61,6 @@
             cursor: pointer;
             margin-bottom: 5px;
             margin-left: auto;
-            display: block;
             transition: 0.3s;
         }
         .bio-lang-toggle:hover { background: var(--accent); color: #fff; }
@@ -114,6 +116,8 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
             margin-bottom: 25px;
             text-align: left;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .intro-box p {
@@ -144,6 +148,8 @@
             color: inherit;
             box-shadow: 0 2px 6px rgba(0,0,0,0.02);
             transition: all 0.2s;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .link-item:hover {
@@ -234,8 +240,6 @@
             </p>
         </div>
 
-        <!-- 🚨 注意：記得將下方網址中的 chantszying.github.io/您的專案名稱/ 替換成您實際的主網站網址 🚨 -->
-        
         <!-- 連結卡片 1: Travel Blog -->
         <a href="https://chantszying.github.io/urban-wilder/#travel" class="link-item">
             <div class="link-title">
@@ -245,7 +249,9 @@
                 <span class="en">Exchange thoughts on urban wildlife, bee/wasp observations, and conservation, or share stories of encounters in the field.</span>
                 <span class="lang-zh">交流關於城市野生動物、蜜蜂/黃蜂觀察、生態保育的所見所聞。</span>
             </p>
-            <div class="btn-small"><span class="en">Read Travel Blog</span><span class="lang-zh">閱讀旅遊 Blog</span> <i class="fa-solid fa-arrow-right"></i></div>
+            <div class="btn-small">
+                <span class="en">Read Travel Blog</span><span class="lang-zh">閱讀旅遊 Blog</span> <i class="fa-solid fa-arrow-right"></i>
+            </div>
         </a>
 
         <!-- 連結卡片 2: My Gallery -->
@@ -257,7 +263,9 @@
                 <span class="en">Share film camera tips and lab experiences, or go on a photowalk around the city together to capture everyday moments.</span>
                 <span class="lang-zh">互相交換底片相機的使用心得、沖掃經驗，或者一起去城市散步、捕捉日常風景。</span>
             </p>
-            <div class="btn-small"><span class="en">View My Gallery</span><span class="lang-zh">我的作品 - My Gallery</span> <i class="fa-solid fa-arrow-right"></i></div>
+            <div class="btn-small">
+                <span class="en">View My Gallery</span><span class="lang-zh">我的作品 - My Gallery</span> <i class="fa-solid fa-arrow-right"></i>
+            </div>
         </a>
 
         <!-- 連結卡片 3: Project -->
@@ -269,7 +277,9 @@
                 <span class="en">From Cyanotype creations and handmade crafts to any fun or even slightly wild ideas, let's brainstorm together!</span>
                 <span class="lang-zh">像是藍曬（Cyanotype）創作、手作小物，或是任何好玩、甚至有其他 idea，都歡迎一起創作！</span>
             </p>
-            <div class="btn-small"><span class="en">View Projects</span><span class="lang-zh">小小企劃 - Project</span> <i class="fa-solid fa-arrow-right"></i></div>
+            <div class="btn-small">
+                <span class="en">View Projects</span><span class="lang-zh">小小企劃 - Project</span> <i class="fa-solid fa-arrow-right"></i>
+            </div>
         </a>
 
         <!-- 進入主網站連結 -->
